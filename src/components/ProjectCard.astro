@@ -2,8 +2,8 @@
 const { title, description, imageUrl, demoLink, githubLink } = Astro.props;
 ---
 <li class="link-card">
-  <a href={demoLink} target="_blank" rel="noopener noreferrer">
-    <h2>{title} <span>&rarr;</span></h2>
+  <a>
+    <h2>{title}</h2>
     <p>{description}</p>
     <img src={imageUrl} alt={`${title} image`} class="card-image" />
   </a>
