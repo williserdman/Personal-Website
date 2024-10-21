@@ -1,0 +1,125 @@
+---
+const { title, description, imageUrl, demoLink, githubLink } = Astro.props;
+---
+<li class="link-card">
+  <a href={demoLink} target="_blank" rel="noopener noreferrer">
+    <h2>{title} <span>&rarr;</span></h2>
+    <p>{description}</p>
+    <img src={imageUrl} alt={`${title} image`} class="card-image" />
+  </a>
+  <div class="button-container">
+    <a href={demoLink} target="_blank" rel="noopener noreferrer" class="button demo-btn">
+      Demo
+    </a>
+    <a href={githubLink} target="_blank" rel="noopener noreferrer" class="button github-btn">
+      GitHub
+    </a>
+  </div>
+</li>
+
+<style>
+  .link-card {
+    list-style: none;
+    padding: 2px;
+    margin: 10px;
+    background-color: #23262d;
+    border-radius: 12px;
+    background-position: 100%;
+    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.3s ease;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+  }
+
+  .link-card a {
+    display: block;
+    text-decoration: none;
+    line-height: 1.4;
+    padding: 1.5rem;
+    color: white;
+    background-color: #23262d;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+  }
+
+  .link-card a:hover {
+    opacity: 1;
+  }
+
+  .link-card h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .link-card p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .card-image {
+    width: 100%;
+    height: auto;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    margin-top: 12px;
+    border-radius: 12px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Hover effect for the card and image */
+  .link-card:is(:hover, :focus-within) {
+    background-position: 0;
+    background-image: var(--accent-gradient);
+    transform: translateY(-5px);
+  }
+
+  .link-card:is(:hover, :focus-within) h2 {
+    color: rgb(var(--accent-light));
+  }
+
+  .link-card:is(:hover, :focus-within) .card-image {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.8);
+  }
+
+  /* Button Container */
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7px;
+  }
+
+  /* Buttons */
+  .button {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    font-size: 0.875rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    width: 48%;
+    display: inline-block;
+  }
+
+  .demo-btn {
+    background-color: #4f46e5;
+  }
+
+  .github-btn {
+    background-color: #1f2937;
+  }
+
+  .button:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+  }
+
+  .demo-btn:hover {
+    background-color: #4338ca;
+  }
+
+  .github-btn:hover {
+    background-color: #111827;
+  }
+</style>
