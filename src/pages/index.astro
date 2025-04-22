@@ -43,15 +43,22 @@ import ProjectCard from "../components/ProjectCard.astro"
 		<h2>Featured <span class="h2-gradient">Projects</span>.</h2>
 		<ul role="list" class="link-card-grid">
 			<ProjectCard 
+      title="Black-Scholes Options Pricing Model" 
+      description="Designed a Streamlit interface to visualize volatility, enabling real-time sensitivity analysis for all 10 parameter pairs." 
+      imageUrl="/blackscholes/demopic.png" 
+      demoLink="https://williserdmanblackscholes.streamlit.app/" 
+      githubLink="https://github.com/williserdman/options_pricer"
+    />
+	<ProjectCard 
       title="3D Portfolio" 
-      description="This has a 3D environment made with THREE.js. The operating system emulation was done primarily using SvelteKit." 
+      description="3D browser-based environment simulating an interactive OS, clickable apps like a file explorer, terminal, and project gallery, scroll-triggered zoom mechanics and GSAP camera movements." 
       imageUrl="/portfolio/demopic.png" 
       demoLink="https://portfolio.williserdman.com" 
       githubLink="https://github.com/williserdman/2022_projects/tree/main/3dPortfolio"
     />
 	<ProjectCard 
 	title="Mechanical Neuroevolution" 
-	description="A neuroevolution project. The 'hands' are each controlled by an agent which evolutionary algorithms are applied." 
+	description="Applied evolutionary strategies to optimize agent weights over generations, this converges to stable behaviors." 
 	imageUrl="/polebalancing/demopic.png" 
 	demoLink="https://polebalancing.williserdman.com" 
 	githubLink="https://github.com/williserdman/Pole-Balancing"
